@@ -44,6 +44,7 @@ sudo make -C ~/.local/src/arch-dwm/dwm/ clean install
 sudo make -C ~/.local/src/arch-dwm/dmenu/ clean install
 sudo make -C ~/.local/src/arch-dwm/st/ clean install
 sudo make -C ~/.local/src/arch-dwm/slstatus/ clean install
+sudo make -C ~/.local/src/arch-dwm/slock/ clean install
 
 cat << "EOF"
 
