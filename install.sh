@@ -13,7 +13,7 @@ cat << "EOF"
 EOF
 
 # Install essential packages
-sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset alsa-utils ttf-font-awesome ttf-hack \
+sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset xdotool alsa-utils ttf-font-awesome ttf-hack \
 	ttf-hack-nerd picom fastfetch firefox nsxiv neovim mpv newsboat sxhkd bleachbit unzip \
 	zathura zathura-pdf-poppler libxft libxinerama scrot
 
