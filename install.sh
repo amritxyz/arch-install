@@ -13,9 +13,10 @@ cat << "EOF"
 EOF
 
 # Install essential packages
-sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset xdotool alsa-utils ttf-font-awesome ttf-hack \
-	ttf-hack-nerd noto-fonts-emoji picom fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
-	zathura zathura-pdf-poppler libxft libxinerama scrot
+sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset xdotool alsa-utils \
+	ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji picom fastfetch \
+	firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
+	libxft libxinerama scrot
 
 # Clone dotfiles repository
 git clone --depth=1 https://gitlab.com/amrit-44404/archrice $HOME/archrice
