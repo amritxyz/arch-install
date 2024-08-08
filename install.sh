@@ -47,6 +47,11 @@ sudo make -C ~/.local/src/arch-dwm/st/ clean install
 sudo make -C ~/.local/src/arch-dwm/slstatus/ clean install
 sudo make -C ~/.local/src/arch-dwm/slock/ clean install
 
+# Clean home folder
+mkdir -p $HOME/.local/git-repos
+mv $HOME/archrice $HOME/.local/git-repos
+mv $HOME/arch-install $HOME/.local/git-repos
+
 cat << "EOF"
 
 => Installation completed successfully.
