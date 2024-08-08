@@ -22,7 +22,7 @@ sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset xdotool alsa-utils \
 git clone --depth=1 https://gitlab.com/amrit-44404/archrice $HOME/archrice
 
 # Create necessary directories
-mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src
+mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/hugo-dir $HOME/.local/ff
 
 # Copy configuration files
 cat << "EOF"
