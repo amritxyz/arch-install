@@ -34,6 +34,7 @@ cp -r $HOME/archrice/.local/share/* $HOME/.local/share
 \cp -r $HOME/archice/.local/bin/* $HOME/.local/bin
 \cp -r $HOME/archrice/.config/* $HOME/.config
 \cp $HOME/archrice/.bashrc $HOME/.bashrc
+\cp $HOME/archrice/.inputrc $HOME/.inputrc
 \cp $HOME/archrice/.xinitrc $HOME/.xinitrc
 
 # Clone walls
