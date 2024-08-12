@@ -22,7 +22,7 @@ sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset xdotool alsa-utils \
 git clone --depth=1 https://gitlab.com/amrit-44404/archrice $HOME/archrice
 
 # Create necessary directories
-mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOME/hugo-dir
+mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOME/.local/hugo-dir
 
 # Copy configuration files
 cat << "EOF"
@@ -31,7 +31,7 @@ cat << "EOF"
 
 EOF
 cp -r $HOME/archrice/.local/share/* $HOME/.local/share
-\cp -r $HOME/archice/.local/bin/* $HOME/.local/bin
+\cp $HOME/archrice/.local/bin/* $HOME/.local/bin
 \cp -r $HOME/archrice/.config/* $HOME/.config
 \cp $HOME/archrice/.bashrc $HOME/.bashrc
 \cp $HOME/archrice/.inputrc $HOME/.inputrc
@@ -51,7 +51,7 @@ sudo make -C ~/.local/src/arch-dwm/slock/ clean install
 
 # Tearfree screen config
 sudo mkdir -p /etc/X11/xorg.conf.d/
-sudo cp $HOME/voidrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
+sudo cp $HOME/archrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
 
 # Clean home directory
 mkdir -p $HOME/.local/git-repos
