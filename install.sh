@@ -49,9 +49,9 @@ sudo make -C ~/.local/src/arch-dwm/st/ clean install
 sudo make -C ~/.local/src/arch-dwm/slstatus/ clean install
 sudo make -C ~/.local/src/arch-dwm/slock/ clean install
 
-# Tearfree screen config
-sudo mkdir -p /etc/X11/xorg.conf.d/
-sudo cp $HOME/archrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
+## Tearfree screen config
+#sudo mkdir -p /etc/X11/xorg.conf.d/
+#sudo cp $HOME/archrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
 
 # Clean home directory
 mkdir -p $HOME/.local/git-repos
