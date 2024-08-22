@@ -12,6 +12,18 @@ cat << "EOF"
 
 EOF
 
+# Disable Wifi-Power Saver
+read -n1 -rep 'Would you like to disable wifi powersave? (y,n)' WIFI
+if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
+    LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
+    echo -e "The following has been added to $LOC.\n"
+    echo -e "[connection]\nwifi.powersave = 2" | sudo tee -a $LOC
+    echo -e "\n"
+    echo -e "Restarting NetworkManager service...\n"
+    sudo systemctl restart NetworkManager
+    sleep 3
+fi
+
 # Install essential packages
 sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset xdotool alsa-utils \
 	ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
