@@ -48,6 +48,7 @@ cp -r $HOME/archrice/.local/share/* $HOME/.local/share
 \cp $HOME/archrice/.bashrc $HOME/.bashrc
 \cp $HOME/archrice/.inputrc $HOME/.inputrc
 \cp $HOME/archrice/.xinitrc $HOME/.xinitrc
+\cp $HOME/archrice/.Xmodmap $HOME/.Xmodmap
 
 # Clone walls
 git clone --depth=1 https://gitlab.com/amrit-44404/void-wall $HOME/.local/share/void-wall
