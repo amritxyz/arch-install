@@ -28,8 +28,7 @@ fi
 sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset xdotool alsa-utils \
 	ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
 	firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
-	libxft libxinerama scrot xf86-video-intel bluez bluez-utils xorg-xmodmap \
-	dunst libnotify
+	libxft libxinerama scrot xf86-video-intel bluez bluez-utils xorg-xmodmap
 
 # Clone dotfiles repository
 git clone --depth=1 https://gitlab.com/amrit-44404/archrice $HOME/archrice
