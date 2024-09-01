@@ -1,15 +1,11 @@
 cat << "EOF"
-
-
------------------------------------------------------------------------
+#################################################
     _          _        _     ___
    /_\  _ _ __| |_    _| |_  |   \__ __ ___ __
   / _ \| '_/ _| ' \  |_   _| | |) \ V  V / '  \
  /_/ \_\_| \__|_||_|   |_|   |___/ \_/\_/|_|_|_|
 
------------------------------------------------------------------------
-
-
+#################################################
 EOF
 
 # Disable Wifi-Power Saver
@@ -28,7 +24,7 @@ fi
 sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset xdotool alsa-utils \
 	ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
 	firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
-	libxft libxinerama scrot xf86-video-intel bluez bluez-utils xorg-xmodmap
+	libxft libxinerama scrot xf86-video-intel bluez bluez-utils xorg-setxkbmap
 
 # Clone dotfiles repository
 git clone --depth=1 https://gitlab.com/amrit-44404/archrice $HOME/archrice
@@ -48,7 +44,6 @@ cp -r $HOME/archrice/.local/share/* $HOME/.local/share
 \cp $HOME/archrice/.bashrc $HOME/.bashrc
 \cp $HOME/archrice/.inputrc $HOME/.inputrc
 \cp $HOME/archrice/.xinitrc $HOME/.xinitrc
-\cp $HOME/archrice/.Xmodmap $HOME/.Xmodmap
 
 # Clone walls
 git clone --depth=1 https://gitlab.com/amrit-44404/void-wall $HOME/.local/share/void-wall
@@ -76,9 +71,9 @@ sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 
 cat << "EOF"
-
-=> Installation completed successfully.
-
+####################################
+Installation completed successfully.
+####################################
 EOF
 
 # End of script
