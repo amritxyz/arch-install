@@ -49,6 +49,9 @@ cp $HOME/archrice/.bashrc $HOME/.bashrc
 cp $HOME/archrice/.inputrc $HOME/.inputrc
 cp $HOME/archrice/.xinitrc $HOME/.xinitrc
 
+# Dev
+git clone --depth=1 https://gitlab.com/NyxVoid/dev.git/ $HOME/.local/dev
+
 # Clone walls
 git clone --depth=1 https://gitlab.com/NyxVoid/void-wall.git/ $HOME/.local/share/void-wall
 
