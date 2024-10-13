@@ -23,7 +23,7 @@ fi
 sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
 
 # Install essential packages
-sudo pacman -S brightnessctl xwallpaper htop lf xorg-xset xdotool alsa-utils \
+sudo pacman -S xorg-xbacklight xwallpaper htop lf xorg-xset xdotool alsa-utils \
   ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
   firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
   libxft libxinerama scrot xf86-video-intel bluez bluez-utils man-db
