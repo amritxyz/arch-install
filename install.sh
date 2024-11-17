@@ -11,22 +11,26 @@ EOF
 # Disable Wifi-Power Saver
 read -n1 -rep 'Would you like to disable wifi powersave? (y,n)' WIFI
 if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
-  LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
-  echo -e "The following has been added to $LOC.\n"
-  echo -e "[connection]\nwifi.powersave = 2" | sudo tee -a $LOC
-  echo -e "\n"
-  echo -e "Restarting NetworkManager service...\n"
-  sudo systemctl restart NetworkManager
-  sleep 3
+	LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
+	echo -e "The following has been added to $LOC.\n"
+	echo -e "[connection]\nwifi.powersave = 2" | sudo tee -a $LOC
+	echo -e "\n"
+	echo -e "Restarting NetworkManager service...\n"
+	sudo systemctl restart NetworkManager
+	sleep 9
 fi
 
 sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
 
-# Install essential packages
-sudo pacman -S xorg-xbacklight xwallpaper htop lf xorg-xset xdotool alsa-utils \
-  ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
-  firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
-  libxft libxinerama scrot xf86-video-intel bluez bluez-utils man-db tmux
+### Install all of the imp pacakges ####
+read -n1 -rep 'Would you like to install the packages? (Y,n)' INST
+if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
+	sudo pacman -S xorg-xbacklight xwallpaper htop lf xorg-xset xdotool alsa-utils \
+		ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
+		firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
+		libxft libxinerama scrot xf86-video-intel bluez bluez-utils man-db tmux
+fi
+
 
 # xorg-setxkbmap
 
@@ -34,7 +38,7 @@ sudo pacman -S xorg-xbacklight xwallpaper htop lf xorg-xset xdotool alsa-utils \
 git clone --depth=1 https://gitlab.com/NyxVoid/archrice.git/ $HOME/archrice
 
 # Create necessary directories
-mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOME/.local/hugo-dir
+mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOME/.local/hugo-dir $HOME/.local/dox
 
 # Copy configuration files
 cat <<"EOF"
