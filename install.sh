@@ -10,14 +10,14 @@ EOF
 
 # Disable Wifi-Power Saver
 read -n1 -rep 'Would you like to disable wifi powersave? (y,n)' WIFI
-if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
+if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
 	LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
 	echo -e "The following has been added to $LOC.\n"
 	echo -e "[connection]\nwifi.powersave = 2" | sudo tee -a $LOC
 	echo -e "\n"
 	echo -e "Restarting NetworkManager service...\n"
 	sudo systemctl restart NetworkManager
-	sleep 9
+	sleep 3
 fi
 
 sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
@@ -30,7 +30,6 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 		firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
 		libxft libxinerama scrot xf86-video-intel bluez bluez-utils man-db tmux
 fi
-
 
 # xorg-setxkbmap
 
