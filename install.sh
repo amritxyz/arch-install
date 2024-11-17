@@ -52,6 +52,9 @@ cp $HOME/archrice/.bashrc $HOME/.bashrc
 cp $HOME/archrice/.inputrc $HOME/.inputrc
 cp $HOME/archrice/.xinitrc $HOME/.xinitrc
 
+# NeoVim
+git clone --depth=1 https://gitlab.com/NyxVoid/nvim.git $HOME/.config/nvim
+
 # Dev
 git clone --depth=1 https://gitlab.com/NyxVoid/dev.git/ $HOME/.local/dev
 
