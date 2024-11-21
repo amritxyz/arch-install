@@ -26,12 +26,13 @@ sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.con
 read -n1 -rep 'Would you like to install the packages? (Y,n)' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -Sy --needed base-devel && \
-	    sudo pacman -S xorg-xinit xorg-xbacklight xwallpaper htop lf xorg-xset xdotool alsa-utils \
-	    ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
-	    firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
-	    libxft libxinerama scrot xf86-video-intel bluez bluez-utils man-db tmux
+		sudo pacman -S xorg-xinit xorg-xbacklight xwallpaper htop lf xorg-xset xdotool alsa-utils \
+		ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
+		firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
+		libxft libxinerama scrot xf86-video-intel bluez bluez-utils man-db tmux \
+		zed xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
 fi
-
+# vulkan-intel
 # xorg-setxkbmap
 
 # Clone dotfiles repository
