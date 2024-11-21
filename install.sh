@@ -29,10 +29,10 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 		sudo pacman -S xorg-xinit xorg-xbacklight xwallpaper htop lf xorg-xset xdotool alsa-utils \
 		ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
 		firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
-		libxft libxinerama scrot xf86-video-intel bluez bluez-utils man-db tmux \
+		libxft libxinerama scrot xf86-video-intel man-db tmux \
 		zed xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
 fi
-# vulkan-intel
+# vulkan-intel bluez bluez-utils
 # xorg-setxkbmap
 
 # Clone dotfiles repository
