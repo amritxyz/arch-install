@@ -82,10 +82,6 @@ mkdir -p $HOME/.local/git-repos
 mv $HOME/archrice $HOME/.local/git-repos
 mv $HOME/arch-install $HOME/.local/git-repos
 
-# Enable bluetooth services
-# sudo systemctl enable bluetooth.service
-# sudo systemctl start bluetooth.service
-
 cat <<"EOF"
 ####################################
 Installation completed successfully.
