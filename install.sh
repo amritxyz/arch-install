@@ -26,12 +26,13 @@ sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.con
 read -n1 -rep 'Would you like to install the packages? (Y,n)' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -Sy --needed xorg base-devel && \
-		sudo pacman -S xorg-xinit xorg-xbacklight xwallpaper htop lf xorg-xset xdotool alsa-utils \
-		ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch \
-		firefox nsxiv neovim mpv newsboat bleachbit unzip zathura zathura-pdf-poppler \
-		libxft libxinerama scrot xf86-video-intel man-db tmux \
-		zed xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
+		sudo pacman -S htop lf alsa-utils ttf-font-awesome ttf-hack \
+		ttf-hack-nerd noto-fonts-emoji xcompmgr fastfetch firefox \
+		nsxiv neovim mpv newsboat bleachbit unzip xf86-video-intel \
+		zathura zathura-pdf-poppler scrot man-db tmux
 fi
+# libxft libxinerama xorg-xinit xorg-xbacklight xwallpaper xorg-xset xdotool xorg-xmodmap
+# zed xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
 # vulkan-intel bluez bluez-utils
 # xorg-setxkbmap
 
@@ -82,8 +83,8 @@ mv $HOME/archrice $HOME/.local/git-repos
 mv $HOME/arch-install $HOME/.local/git-repos
 
 # Enable bluetooth services
-sudo systemctl enable bluetooth.service
-sudo systemctl start bluetooth.service
+# sudo systemctl enable bluetooth.service
+# sudo systemctl start bluetooth.service
 
 cat <<"EOF"
 ####################################
