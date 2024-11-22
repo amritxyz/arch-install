@@ -88,7 +88,7 @@ Installation completed successfully.
 ####################################
 EOF
 
-sleep 1
+sleep 3
 reboot
 
 # End of script
