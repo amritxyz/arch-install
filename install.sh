@@ -28,7 +28,7 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -S xorg-xinit xorg-xbacklight xwallpaper xorg-xset xdotool xorg-xmodmap \
 		libxinerama libxft htop lf alsa-utils ttf-font-awesome ttf-hack ttf-hack-nerd \
 		noto-fonts-emoji xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit \
-		unzip xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux
+		unzip xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc
 fi
 # sudo pacman -Sy --needed base-devel && \
 # zed xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
