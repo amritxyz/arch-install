@@ -25,12 +25,13 @@ sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.con
 ### Install all of the imp pacakges ####
 read -n1 -rep 'Would you like to install the packages? (Y,n)' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
-	sudo pacman -S xorg-xinit xorg-xbacklight xwallpaper xorg-xset xdotool xorg-xmodmap \
-		libxinerama libxft htop lf alsa-utils ttf-font-awesome ttf-hack ttf-hack-nerd \
-		noto-fonts-emoji xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit \
+	sudo pacman -S xorg-xbacklight xwallpaper xorg-xset xdotool libxinerama libxft xclip\
+		htop lf alsa-utils ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji\
+		xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit \
 		unzip xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc
 fi
 # sudo pacman -Sy --needed base-devel && \
+# xorg-xinit xorg-xmodmap
 # zed xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
 # vulkan-intel bluez bluez-utils
 # xorg-setxkbmap
