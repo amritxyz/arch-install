@@ -41,7 +41,7 @@ fi
 git clone --depth=1 https://gitlab.com/NyxVoid/archrice.git/ $HOME/archrice
 
 # Create necessary directories
-mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOME/.local/hugo-dir $HOME/.local/dox
+mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOME/.local/hugo-dir $HOME/.local/dox $HOME/.local/vids
 
 # Copy configuration files
 cat <<"EOF"
