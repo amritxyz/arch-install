@@ -27,10 +27,10 @@ read -n1 -rep 'Would you like to install the packages? (Y,n)' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -S xorg-xbacklight xwallpaper xorg-xset xdotool libxinerama libxft xclip\
 		htop lf alsa-utils ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji\
-		xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit \
-		unzip xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc \
-		gimp obs-studio rust go
+		xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
+		xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc rust go
 fi
+# gimp obs-studio
 # sudo pacman -Sy --needed base-devel && \
 # xorg-xinit xorg-xmodmap
 # zed xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
