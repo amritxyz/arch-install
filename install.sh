@@ -25,10 +25,11 @@ sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.con
 ### Install all of the imp pacakges ####
 read -n1 -rep 'Would you like to install the packages? (Y,n)' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
-	sudo pacman -S xorg-xbacklight xwallpaper xorg-xset xdotool libxinerama libxft xclip\
-		htop lf alsa-utils ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji\
+	sudo pacman -S xorg-xbacklight xwallpaper xorg-xset xdotool libxinerama libxft xclip \
+		htop lf alsa-utils ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
 		xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
-		xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc rust go
+		xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc rust go \
+		ripgrep hugo adwaita-icon-theme bluez bluez-utils
 fi
 # gimp obs-studio
 # sudo pacman -Sy --needed base-devel && \
@@ -77,11 +78,15 @@ sudo make -C ~/.local/src/arch-dwm/slock/ clean install
 # Better performance
 sudo mkdir -p /etc/X11/xorg.conf.d/
 sudo cp $HOME/archrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
+sudo cp $HOME/archrice/.local/share/hosts /etc/hosts
 
 # Clean home directory
 mkdir -p $HOME/.local/git-repos
 mv $HOME/archrice $HOME/.local/git-repos
 mv $HOME/arch-install $HOME/.local/git-repos
+
+# Bluetooth services
+sudo systemctl enable bluetooth.service
 
 cat <<"EOF"
 ####################################
