@@ -29,7 +29,7 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 		htop lf alsa-utils ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
 		xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
 		xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc rust go \
-		ripgrep hugo adwaita-icon-theme bluez bluez-utils unclutter
+		ripgrep hugo adwaita-icon-theme bluez bluez-utils
 fi
 # gimp obs-studio
 # sudo pacman -Sy --needed base-devel && \
