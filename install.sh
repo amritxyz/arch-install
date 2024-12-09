@@ -20,7 +20,7 @@ if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
 	sleep 3
 fi
 
-sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 15/" /etc/pacman.conf
+sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 5/" /etc/pacman.conf
 
 ### Install all of the imp pacakges ####
 read -n1 -rep 'Would you like to install the packages? (Y,n)' INST
@@ -29,7 +29,7 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 		htop lf alsa-utils ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
 		xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
 		xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc rust go \
-		ripgrep hugo adwaita-icon-theme bluez bluez-utils
+		ripgrep hugo adwaita-icon-theme bluez bluez-utils unclutter
 fi
 # gimp obs-studio
 # sudo pacman -Sy --needed base-devel && \
