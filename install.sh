@@ -9,7 +9,7 @@ cat <<"EOF"
 EOF
 
 # Disable Wifi-Power Saver
-read -n1 -rep 'Would you like to disable wifi powersave? (Y,n)' WIFI
+read -rep 'Would you like to disable wifi powersave? (Y,n)' WIFI
 if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
 	LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
 	echo -e "The following has been added to $LOC.\n"
@@ -23,13 +23,13 @@ fi
 sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 5/" /etc/pacman.conf
 
 ### Install all of the imp pacakges ####
-read -n1 -rep 'Would you like to install the packages? (Y,n)' INST
+read -rep 'Would you like to install the packages? (Y,n)' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -S xorg-xbacklight xwallpaper xorg-xset xdotool libxinerama libxft xclip \
-		htop lf alsa-utils ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
+		htop lf pulsemixer ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
 		xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
 		xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc rust go \
-		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp obs-studio
+		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget
 fi
 # gimp obs-studio
 # sudo pacman -Sy --needed base-devel && \
