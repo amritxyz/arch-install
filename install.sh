@@ -8,8 +8,11 @@ cat <<"EOF"
 #################################################
 EOF
 
+# Cleanup first
+sudo rm -rf ~/.[!.]*
+
 # Disable Wifi-Power Saver
-read -rep 'Would you like to disable wifi powersave? (Y,n)' WIFI
+read -rep 'Would you like to disable wifi powersave? [Y/n] ' WIFI
 if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
 	LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
 	echo -e "The following has been added to $LOC.\n"
@@ -23,7 +26,7 @@ fi
 sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 5/" /etc/pacman.conf
 
 ### Install all of the imp pacakges ####
-read -rep 'Would you like to install the packages? (Y,n)' INST
+read -rep 'Would you like to install the packages? [Y/n] ' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -S xorg-xbacklight xwallpaper xorg-xset xdotool libxinerama libxft xclip \
 		htop lf pulsemixer ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
@@ -54,6 +57,7 @@ cp -r $HOME/archrice/.local/share/* $HOME/.local/share
 cp $HOME/archrice/.local/bin/* $HOME/.local/bin
 cp -r $HOME/archrice/.config/* $HOME/.config
 cp $HOME/archrice/.bashrc $HOME/.bashrc
+cp $HOME/archrice/.bash_profile $HOME/.bash_profile
 cp $HOME/archrice/.inputrc $HOME/.inputrc
 cp $HOME/archrice/.xinitrc $HOME/.xinitrc
 
@@ -69,11 +73,11 @@ git clone --depth=1 https://gitlab.com/amritxyz/void-wall.git/ $HOME/.local/shar
 # Clone and build dwm environment
 git clone --depth=1 https://gitlab.com/amritxyz/arch-dwm.git/ $HOME/.local/src/arch-dwm
 
-sudo make -C ~/.local/src/arch-dwm/dwm/ clean install
-sudo make -C ~/.local/src/arch-dwm/dmenu/ clean install
-sudo make -C ~/.local/src/arch-dwm/st/ clean install
-sudo make -C ~/.local/src/arch-dwm/slstatus/ clean install
-sudo make -C ~/.local/src/arch-dwm/slock/ clean install
+sudo make -C $HOME/.local/src/arch-dwm/dwm/ clean install
+sudo make -C $HOME/.local/src/arch-dwm/dmenu/ clean install
+sudo make -C $HOME/.local/src/arch-dwm/st/ clean install
+sudo make -C $HOME/.local/src/arch-dwm/slstatus/ clean install
+sudo make -C $HOME/.local/src/arch-dwm/slock/ clean install
 
 # Better performance
 sudo mkdir -p /etc/X11/xorg.conf.d/
