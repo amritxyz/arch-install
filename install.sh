@@ -39,7 +39,7 @@ fi
 # xorg-setxkbmap
 
 # Clone dotfiles repository
-git clone --depth=1 https://gitlab.com/NyxVoid/archrice.git/ $HOME/archrice
+git clone --depth=1 https://gitlab.com/amritxyz/archrice.git/ $HOME/archrice
 
 # Create necessary directories
 mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOME/.local/hugo-dir $HOME/.local/dox $HOME/.local/vids
@@ -58,16 +58,16 @@ cp $HOME/archrice/.inputrc $HOME/.inputrc
 cp $HOME/archrice/.xinitrc $HOME/.xinitrc
 
 # NeoVim
-git clone --depth=1 https://gitlab.com/NyxVoid/nvim.git $HOME/.config/nvim
+git clone --depth=1 https://gitlab.com/amritxyz/nvim.git $HOME/.config/nvim
 
 # Dev
-git clone --depth=1 https://gitlab.com/NyxVoid/dev.git/ $HOME/.local/dev
+git clone --depth=1 https://gitlab.com/amritxyz/dev.git/ $HOME/.local/dev
 
 # Clone walls
-git clone --depth=1 https://gitlab.com/NyxVoid/void-wall.git/ $HOME/.local/share/void-wall
+git clone --depth=1 https://gitlab.com/amritxyz/void-wall.git/ $HOME/.local/share/void-wall
 
 # Clone and build dwm environment
-git clone --depth=1 https://gitlab.com/NyxVoid/arch-dwm.git/ $HOME/.local/src/arch-dwm
+git clone --depth=1 https://gitlab.com/amritxyz/arch-dwm.git/ $HOME/.local/src/arch-dwm
 
 sudo make -C ~/.local/src/arch-dwm/dwm/ clean install
 sudo make -C ~/.local/src/arch-dwm/dmenu/ clean install
