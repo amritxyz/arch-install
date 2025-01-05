@@ -32,9 +32,9 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 		htop lf pulsemixer ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
 		xcompmgr fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
 		xf86-video-intel zathura zathura-pdf-poppler scrot man-db tmux bc rust go \
-		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget transmission-cli
+		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget deluge-gtk
 fi
-# gimp obs-studio
+# gimp obs-studio transmission-cli
 # sudo pacman -Sy --needed base-devel && \
 # xorg-xinit xorg-xmodmap
 # zed xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
