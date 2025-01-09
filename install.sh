@@ -9,7 +9,7 @@ cat <<"EOF"
 EOF
 
 # Cleanup first
-sudo rm -rf ~/.[!.]*
+sudo rm -rf $HOME/.[!.]*
 
 # Disable Wifi-Power Saver
 read -rep 'Would you like to disable wifi powersave? [Y/n] ' WIFI
