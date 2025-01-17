@@ -111,9 +111,9 @@ mv $HOME/arch-install $HOME/.local/git-repos
 # Bluetooth services
 sudo systemctl enable bluetooth.service
 
-sudo rm -rf ~/.cache
-mkdir -p ~/.cache
-sudo chown void:void ~/.cache
+sudo rm -rf $HOME/.cache
+mkdir -p $HOME/.cache
+sudo chown void:void $HOME/.cache
 
 cat << "EOF"
 
