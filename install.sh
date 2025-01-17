@@ -1,11 +1,12 @@
-cat <<"EOF"
-#################################################
-    _          _        _     ___
-   /_\  _ _ __| |_    _| |_  |   \__ __ ___ __
-  / _ \| '_/ _| ' \  |_   _| | |) \ V  V / '  \
- /_/ \_\_| \__|_||_|   |_|   |___/ \_/\_/|_|_|_|
+cat << "EOF"
 
-#################################################
+/****************************************************************
+ *								*
+ *		ARCH LINUX INSTALLATION SCRIPT			*
+ *								*
+ ****************************************************************
+ */
+
 EOF
 
 # Cleanup first
@@ -51,9 +52,15 @@ mkdir -p $HOME/.local/share $HOME/.config $HOME/.local/src $HOME/.local/bin $HOM
 # Copy configuration files
 cat <<"EOF"
 
-=> copying configs from dotfiles"
+/****************************************************
+ *						    *
+ *		CONFIGURING DOTFILES		    *
+ *						    *
+ ****************************************************
+ */
 
 EOF
+
 cp -r $HOME/archrice/.local/share/* $HOME/.local/share
 cp $HOME/archrice/.local/bin/* $HOME/.local/bin
 cp -r $HOME/archrice/.config/* $HOME/.config
@@ -70,6 +77,17 @@ git clone --depth=1 https://gitlab.com/amritxyz/dev.git/ $HOME/.local/dev
 
 # Clone walls
 git clone --depth=1 https://gitlab.com/amritxyz/void-wall.git/ $HOME/.local/share/void-wall
+
+cat << "EOF"
+
+/************************************************************
+ *							    *
+ *		INSTALLING SUCKLESS SOFTWARE		    *
+ *							    *
+ ************************************************************
+ */
+
+EOF
 
 # Clone and build dwm environment
 git clone --depth=1 https://gitlab.com/amritxyz/arch-dwm.git/ $HOME/.local/src/arch-dwm
@@ -93,10 +111,15 @@ mv $HOME/arch-install $HOME/.local/git-repos
 # Bluetooth services
 sudo systemctl enable bluetooth.service
 
-cat <<"EOF"
-####################################
-Installation completed successfully.
-####################################
+cat << "EOF"
+
+/********************************************************
+ *							*
+ *		SUCCESSFULLY CONFIGURED			*
+ *							*
+ ********************************************************
+ */
+
 EOF
 
 sleep 3
