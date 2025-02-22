@@ -29,7 +29,7 @@ sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 5/" /etc/pacman.conf
 ### Install all of the imp pacakges ####
 read -rep 'Would you like to install the packages? [Y/n] ' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
-	sudo pacman -S xwallpaper xorg-xset xdotool libxinerama libxft xclip brightnessctl \
+	sudo pacman -S xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft xclip brightnessctl \
 		htop lf pulsemixer ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
 		xcompmgr git-lfs ffmpeg fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
 		zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl cmatrix \
@@ -103,6 +103,7 @@ sudo make -C $HOME/.local/src/arch-dwm/slock/ clean install
 # Better performance
 sudo mkdir -p /etc/X11/xorg.conf.d/
 sudo cp $HOME/archrice/.local/share/10-modesetting.conf /etc/X11/xorg.conf.d/
+sudo cp $HOME/archrice/.local/share/40-libinput.conf /etc/X11/xorg.conf.d/
 sudo cp $HOME/archrice/.local/share/hosts /etc/hosts
 
 # Clean home directory
