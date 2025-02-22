@@ -35,7 +35,7 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 		zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl cmatrix \
 		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget deluge-gtk \
 		mesa vulkan-intel intel-media-driver \
-		rust go jdk21-openjdk
+		rust go jdk21-openjdk clang pyright
 fi
 # libva-intel-driver.
 # obs-studio transmission-cli
@@ -102,7 +102,7 @@ sudo make -C $HOME/.local/src/arch-dwm/slock/ clean install
 
 # Better performance
 sudo mkdir -p /etc/X11/xorg.conf.d/
-sudo cp $HOME/archrice/.local/share/20-intel.conf /etc/X11/xorg.conf.d/
+sudo cp $HOME/archrice/.local/share/10-modesetting.conf /etc/X11/xorg.conf.d/
 sudo cp $HOME/archrice/.local/share/hosts /etc/hosts
 
 # Clean home directory
