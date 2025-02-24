@@ -72,7 +72,7 @@ cp $HOME/archrice/.inputrc $HOME/.inputrc
 cp $HOME/archrice/.xinitrc $HOME/.xinitrc
 
 # NeoVim
-git clone --depth=1 https://github.com/amritxyz/nvim.git $HOME/.config/nvim
+git clone --depth=1 https://github.com/amritxyz/kickstart-nvim.git $HOME/.config/nvim
 
 # Dev
 git clone --depth=1 https://github.com/amritxyz/dev.git/ $HOME/.local/dev
