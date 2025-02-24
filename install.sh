@@ -24,7 +24,7 @@ if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
 	sleep 3
 fi
 
-sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 5/" /etc/pacman.conf
+sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 3/" /etc/pacman.conf
 
 ### Install all of the imp pacakges ####
 read -rep 'Would you like to install the packages? [Y/n] ' INST
