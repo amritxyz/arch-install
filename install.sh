@@ -13,7 +13,7 @@ EOF
 sudo rm -rf $HOME/.[!.]*
 
 # Disable Wifi-Power Saver
-read -rep 'Would you like to disable wifi powersave? [Y/n] ' WIFI
+read -rep ':: Would you like to disable wifi powersave? [Y/n] ' WIFI
 if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
 	LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
 	echo -e "The following has been added to $LOC.\n"
@@ -24,7 +24,10 @@ if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
 	sleep 3
 fi
 
-sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 3/" /etc/pacman.conf
+# read -rep ':: Would you like to enable "ParallelDownloads = 3" [Y/n] ' WIFI
+# if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
+# 	sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 3/" /etc/pacman.conf
+# fi
 
 ### Install all of the imp pacakges ####
 read -rep 'Would you like to install the packages? [Y/n] ' INST
