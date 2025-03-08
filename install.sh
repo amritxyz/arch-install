@@ -35,7 +35,7 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -S xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft xclip brightnessctl \
 		htop lf pulsemixer ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
 		picom git-lfs ffmpeg fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
-		zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl cmatrix \
+		zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl cmatrix imagemagick \
 		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget deluge-gtk \
 		rust-analyzer go jdk21-openjdk clang pyright nodejs npm maven
 fi
