@@ -34,13 +34,13 @@ read -rep 'Would you like to install the packages? [Y/n] ' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -S xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft xclip brightnessctl \
 		htop lf pulsemixer ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
-		xcompmgr git-lfs ffmpeg fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
+		picom git-lfs ffmpeg fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
 		zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl cmatrix \
 		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget deluge-gtk \
 		rust-analyzer go jdk21-openjdk clang pyright nodejs npm maven
 fi
 # mesa vulkan-intel intel-media-driver \
-# libva-intel-driver.
+# libva-intel-driver.xcompmgr
 # obs-studio transmission-cli
 # sudo pacman -Sy --needed base-devel && \
 # xorg-xinit xorg-xmodmap
