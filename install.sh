@@ -44,7 +44,7 @@ fi
 # obs-studio transmission-cli
 # sudo pacman -Sy --needed base-devel && \
 # xorg-xinit xorg-xmodmap
-# zed xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
+# zed gnu-netcat xdg-desktop-portal-gtk xdg-desktop-portal-lxqt
 # vulkan-intel bluez bluez-utils
 # xorg-setxkbmap
 
