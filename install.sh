@@ -30,7 +30,7 @@ fi
 # fi
 
 ### Install all of the imp pacakges ####
-read -rep 'Would you like to install the packages? [Y/n] ' INST
+read -rep ':: Would you like to install the packages? [Y/n] ' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -S xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft xclip brightnessctl \
 		htop lf pulsemixer ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
