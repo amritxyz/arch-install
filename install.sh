@@ -10,7 +10,10 @@ cat << "EOF"
 EOF
 
 # Cleanup first
-sudo rm -rf $HOME/.[!.]*
+read -rep 'Would you like to cleanup Home Dir? [Y/n] ' DLT
+if [[ $DLT == "Y" || $DLT == "y" || -z $DLT ]]; then
+	sudo rm -rf $HOME/.[!.]*
+fi
 
 # Disable Wifi-Power Saver
 read -rep ':: Would you like to disable wifi powersave? [Y/n] ' WIFI
@@ -32,7 +35,7 @@ fi
 ### Install all of the imp pacakges ####
 read -rep ':: Would you like to install the packages? [Y/n] ' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
-	sudo pacman -S xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft xclip brightnessctl \
+	sudo pacman -S --needed xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft xclip brightnessctl \
 		htop lf pulsemixer ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
 		picom git-lfs ffmpeg fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
 		zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl cmatrix imagemagick \
