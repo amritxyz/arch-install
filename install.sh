@@ -10,10 +10,15 @@ cat << "EOF"
 EOF
 
 # Cleanup first
-read -rep 'Would you like to cleanup Home Dir? [Y/n] ' DLT
-if [[ $DLT == "Y" || $DLT == "y" || -z $DLT ]]; then
+read -rep ':: Would you like to cleanup Home Dir? [y/N] ' DLT
+if [[ $DLT == "N" || $DLT == "n" || -z $DLT ]]; then
+	echo "Exiting..."
+	exit 1
+else
+	echo "Cleaning..."
 	sudo rm -rf $HOME/.[!.]*
 fi
+
 
 # Disable Wifi-Power Saver
 read -rep ':: Would you like to disable wifi powersave? [Y/n] ' WIFI
