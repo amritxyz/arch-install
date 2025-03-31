@@ -32,6 +32,16 @@ if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
 	sleep 3
 fi
 
+# Enable Multi-Lib Packages
+read -rep ':: Would you like to enable "Multilib Packages" [Y/n] ' MULLIB
+if [[ $MULLIB == "Y" || $MULLIB == "y" || -z $MULLIB ]]; then
+	cp /etc/pacman.conf ~/pacman.conf.backup
+	mline=$(grep -n "\\[multilib\\]" /etc/pacman.conf | cut -d: -f1)
+	rline=$(($mline + 1))
+	sudo sed -i ''$mline's|#\[multilib\]|\[multilib\]|g' /etc/pacman.conf
+	sudo sed -i ''$rline's|#Include = /etc/pacman.d/mirrorlist|Include = /etc/pacman.d/mirrorlist|g' /etc/pacman.conf
+fi
+
 # read -rep ':: Would you like to enable "ParallelDownloads = 3" [Y/n] ' WIFI
 # if [[ $WIFI == "Y" || $WIFI == "y" || -z $WIFI ]]; then
 # 	sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 3/" /etc/pacman.conf
@@ -40,6 +50,7 @@ fi
 ### Install all of the imp pacakges ####
 read -rep ':: Would you like to install the packages? [Y/n] ' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
+	sudo pacman -Syy &&
 	sudo pacman -S --needed xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft \
 		xclip brightnessctl xorg-xinit xorg-server htop lf pulsemixer xcompmgr \
 		ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
