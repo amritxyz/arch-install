@@ -35,7 +35,7 @@ fi
 # Enable Multi-Lib Packages
 read -rep ':: Would you like to enable "Multilib Packages" [Y/n] ' MULLIB
 if [[ $MULLIB == "Y" || $MULLIB == "y" || -z $MULLIB ]]; then
-	cp /etc/pacman.conf ~/pacman.conf.backup
+	sudo cp /etc/pacman.conf /etc/pacman.conf.backup
 	mline=$(grep -n "\\[multilib\\]" /etc/pacman.conf | cut -d: -f1)
 	rline=$(($mline + 1))
 	sudo sed -i ''$mline's|#\[multilib\]|\[multilib\]|g' /etc/pacman.conf
