@@ -56,7 +56,7 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 		ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
 		git-lfs ffmpeg fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
 		zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl cmatrix imagemagick \
-		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget deluge-gtk \
+		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget deluge-gtk yt-dlp \
 		rust-analyzer go jdk21-openjdk clang pyright nodejs npm maven php
 fi
 # mesa vulkan-intel intel-media-driver \
