@@ -141,6 +141,11 @@ sudo rm -rf $HOME/.cache
 mkdir -p $HOME/.cache
 sudo chown void:void $HOME/.cache
 
+# Change cursor
+CONFIG_FILE="/usr/share/icons/default/index.theme"
+sudo sed -i 's/^Inherits=Adwaita$/Inherits=hicolor/' "$CONFIG_FILE"
+echo "Icon theme changed to hicolor."
+
 cat << "EOF"
 
 /********************************************************
