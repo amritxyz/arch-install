@@ -153,6 +153,7 @@ CURSOR_FILE="/usr/share/icons/default/index.theme"
 BACKUP_FILE="$CURSOR_FILE.bak"
 if [ ! -f "$BACKUP_FILE" ]; then
 	sudo cp "CURSOR_FILE" "BACKUP_FILE"
+fi
 sudo sed -i 's/^Inherits=Adwaita$/Inherits=hicolor/' "$CURSOR_FILE"
 echo "Icon theme changed to hicolor."
 
