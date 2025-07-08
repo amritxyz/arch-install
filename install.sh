@@ -51,13 +51,20 @@ fi
 read -rep ':: Would you like to install the packages? [Y/n] ' INST
 if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -Syy &&
-	sudo pacman -S --needed xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft \
+	sudo pacman -S --noconfirm --needed xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft \
 		xclip brightnessctl xorg-xinit xorg-server htop lf pulsemixer xcompmgr \
-		ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji \
-		git-lfs ffmpeg fastfetch firefox nsxiv neovim mpv newsboat bleachbit unzip \
-		zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl cmatrix imagemagick \
-		ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget deluge-gtk yt-dlp \
-		rust-analyzer go jdk21-openjdk clang pyright nodejs npm maven php
+		ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji
+
+	sudo pacman -S --noconfirm --needed git-lfs ffmpeg fastfetch chromium nsxiv neovim mpv \
+		newsboat bleachbit unzip zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl \
+		cmatrix imagemagick ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget \
+		transmission-gtk yt-dlp
+
+	sudo pacman -S --noconfirm --needed mesa vulkan-intel intel-media-driver
+
+	sudo pacman -S --noconfirm --needed rust-analyzer go jdk21-openjdk clang pyright nodejs npm maven php
+
+	sudo pacman -S --noconfirm --needed texlive-latex texlive-latexextra texlive-pictures texlive-xetex texlive-latexrecommended
 fi
 # mesa vulkan-intel intel-media-driver \
 # libva-intel-driver picom
@@ -142,9 +149,22 @@ mkdir -p $HOME/.cache
 sudo chown void:void $HOME/.cache
 
 # Change cursor
-CONFIG_FILE="/usr/share/icons/default/index.theme"
-sudo sed -i 's/^Inherits=Adwaita$/Inherits=hicolor/' "$CONFIG_FILE"
+CURSOR_FILE="/usr/share/icons/default/index.theme"
+BACKUP_FILE="$CURSOR_FILE.bak"
+if [ ! -f "$BACKUP_FILE" ]; then
+	sudo cp "CURSOR_FILE" "BACKUP_FILE"
+sudo sed -i 's/^Inherits=Adwaita$/Inherits=hicolor/' "$CURSOR_FILE"
 echo "Icon theme changed to hicolor."
+
+# TMP dir
+TMP_DIR=/opt/void
+if [ -d "$TMP_DIR" ]; then
+        echo "$TMP_DIR Exists.."
+else
+        echo "Creating tmp env in /opt dir..."
+        sudo mkdir $TMP_DIR
+        sudo chown $USER:$USER $TMP_DIR
+fi
 
 cat << "EOF"
 
