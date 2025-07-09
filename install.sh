@@ -52,18 +52,12 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -Syy &&
 	sudo pacman -S --noconfirm --needed xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft \
 		xclip brightnessctl xorg-xinit xorg-server htop lf pulsemixer xcompmgr \
-		ttd-dejavu noto-fonts-emoji
-
-	sudo pacman -S --noconfirm --needed git-lfs ffmpeg fastfetch chromium nsxiv neovim mpv gimp imagemagick
-
-	sudo pacman -S --noconfirm --needed newsboat bleachbit unzip zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl \
-		cmatrix ripgrep hugo adwaita-icon-theme bluez bluez-utils wget transmission-gtk yt-dlp
-
-	sudo pacman -S --noconfirm --needed mesa vulkan-intel intel-media-driver
-
-	sudo pacman -S --noconfirm --needed rust-analyzer go jdk21-openjdk clang pyright nodejs npm maven php
-
-	sudo pacman -S --noconfirm --needed texlive-latex texlive-latexextra texlive-pictures texlive-xetex texlive-latexrecommended
+		ttd-dejavu noto-fonts-emoji git-lfs ffmpeg fastfetch chromium nsxiv neovim mpv gimp imagemagick \
+		newsboat bleachbit unzip zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl \
+		cmatrix ripgrep hugo adwaita-icon-theme bluez bluez-utils wget transmission-gtk yt-dlp \
+		mesa vulkan-intel intel-media-driver \
+		rust-analyzer go jdk21-openjdk clang pyright nodejs npm maven php \
+		texlive-latex texlive-latexextra texlive-pictures texlive-xetex texlive-latexrecommended
 fi
 # ttf-font-awesome ttf-hack ttf-hack-nerd
 # mesa vulkan-intel intel-media-driver \
