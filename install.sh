@@ -54,10 +54,10 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 		xclip brightnessctl xorg-xinit xorg-server htop lf pulsemixer xcompmgr \
 		ttf-font-awesome ttf-hack ttf-hack-nerd noto-fonts-emoji
 
-	sudo pacman -S --noconfirm --needed git-lfs ffmpeg fastfetch chromium nsxiv neovim mpv \
-		newsboat bleachbit unzip zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl \
-		cmatrix imagemagick ripgrep hugo adwaita-icon-theme bluez bluez-utils gimp wget \
-		transmission-gtk yt-dlp
+	sudo pacman -S --noconfirm --needed git-lfs ffmpeg fastfetch chromium nsxiv neovim mpv gimp imagemagick
+
+	sudo pacman -S --noconfirm --needed newsboat bleachbit unzip zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl \
+		cmatrix ripgrep hugo adwaita-icon-theme bluez bluez-utils wget transmission-gtk yt-dlp
 
 	sudo pacman -S --noconfirm --needed mesa vulkan-intel intel-media-driver
 
