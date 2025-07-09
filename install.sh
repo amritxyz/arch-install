@@ -53,6 +53,7 @@ if [[ $INST == "Y" || $INST == "y" || -z $INST ]]; then
 	sudo pacman -S --noconfirm --needed xwallpaper xorg-xset xorg-xrandr xdotool libxinerama libxft \
 		xclip brightnessctl xorg-xinit xorg-server htop lf pulsemixer xcompmgr \
 		ttd-dejavu noto-fonts-emoji
+
 	sudo pacman -S --noconfirm --needed git-lfs ffmpeg fastfetch chromium nsxiv neovim mpv gimp imagemagick
 
 	sudo pacman -S --noconfirm --needed newsboat bleachbit unzip zathura zathura-pdf-poppler scrot man-db tmux bc fzf curl \
